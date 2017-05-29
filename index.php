@@ -1,9 +1,9 @@
 <html>
 <head>
-JACK WAGNER SUX
+LUCAS MASINA SUX
 </head>
 <body>
-<h1>This is Lucas' Website!</h1>
+<h1>This is Jack's Website!</h1>
 
 <form action="process.php" method="post">
 	Enter your name:
