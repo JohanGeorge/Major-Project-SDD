@@ -1,15 +1,10 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title> 
-School Newsletter
-</title>
-
-
-</head>
-<body>
-
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>School Newsletter</title>
+	</head>
+	<body>
 		
-		
-
-</body>
+	</body>
 </html>
