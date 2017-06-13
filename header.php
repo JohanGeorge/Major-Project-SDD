@@ -8,6 +8,7 @@
 <title> 
 School Newsletter
 </title>
+
 <link rel="stylesheet" type="text/css" href = "style.css">
 
 </head>
@@ -16,6 +17,7 @@ School Newsletter
 <header>
 	<nav>
 		<ul>
+			<li><div class="icon"><img src="newicon.png" style="width:50px;height:50px;"></div></li>
 			<li><a href="index.php">HOME</a></li>
 				<?php
 					if(isset($_SESSION['id'])){
