@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	if(isset($_POST['submit'])){
 		$file=$_FILES['file'];
 		
@@ -11,14 +13,14 @@
 		$fileext = explode('.',$filename);
 		$fileactualext = strtolower(end($fileext));
 		
-		$allowed = array('jpg', 'jpeg', 'png', 'pdf');
-		if(in_array($fileactualext, $allowed)){
-			if($fileerror===0){
-				if($filesize<500000){
-					$filenamenew = uniqid('',true).".".$fileactualext;
-					$filedestination = 'uploads/'.$filenamenew;
-					move_uploaded_file($filetmpname, $filedestination);
-					header("location: index.php?uploadsuccess");
+		$allowed = array('jpg', 'jpeg', 'png', 'pdf'); //allowed filetypes
+		if(in_array($fileactualext, $allowed)){			//checks if the images filetype is allowed
+			if($fileerror===0){							//checks if there is no error
+				if($filesize<500000){					//checks if the file size is less than 500kB
+					$filenamenew = uniqid('',true).".".$fileactualext;		//changes filename to 'unique id.extension'
+					$filedestination = 'uploads/'.$filenamenew;				//sets file destination to 'uploads' folder with the file named with filenamenew
+					move_uploaded_file($filetmpname, $filedestination);		//checks the filenames match and moves it to the new destination
+					header("location: index.php?uploadsuccess");			//goes back to home page
 				}else{
 					echo "The file is too big";
 				}
@@ -29,7 +31,7 @@
 			echo "You cannot upload files of this type";
 		}
 	}
-	
-	
-	
+	if(isset($filedestination)){
+		$_SESSION['filedestination']=$filedestination;
+	}else{echo "No image selected";}
 ?>
