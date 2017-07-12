@@ -1,7 +1,12 @@
 <?php
 	include 'header.php';
-?>
+	
+	$conn = mysqli_connect("localhost", "root", "", "images");
 
+	if (!$conn) {
+		die("connection failed: ".mysqli_connect_error());
+	}
+?>
 <?php
 	if(isset($_SESSION['id'])){
 		echo $_SESSION['id'];
@@ -13,14 +18,18 @@
 		echo "you are not logged in";
 	}
 ?>
-
 <?php
-	if(isset($_SESSION['id'])){
-		if(isset($_SESSION['filedestination'])){
-			echo "<img src='" . $_SESSION['filedestination'] . "' style='width:50px;height:50px;' alt='error'>" ;
-		}else{echo "No image selected";
+	$sql = "SELECT filedestination FROM filedestinations";
+	$query = mysqli_query($conn, $sql);
+	if(mysqli_query($conn, $sql)){
+		//output data from every row
+		while($row = mysqli_fetch_assoc($query)){
+			echo "<img src='" . $row['filedestination'] . "' style='width:50px;height:50px;' alt='error'>" ;
 		}
-	}
+	}else{
+		echo "Error displaying image";
+		}
 ?>
+
 </body>
 </html>
