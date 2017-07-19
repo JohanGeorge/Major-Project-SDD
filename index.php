@@ -12,11 +12,14 @@
 		echo '<div class="upload">	
 				<form action="upload.php" method="POST" enctype="multipart/form-data"> 
 				<input type="file" name="file" >
+				Description:
 				<input type="text" name="description" >
 				<button type="submit" name="submit">UPLOAD</button>
 				</form></div>';
 	}
-
+?>
+<div class="stream">
+	<?php 
 	$sql = "SELECT filedestination,description FROM filedestinations ORDER BY id DESC";
 	$query = mysqli_query($conn, $sql);
 	if(mysqli_query($conn, $sql)){
@@ -29,8 +32,8 @@
 	}else{
 		echo "Error displaying image";
 		}
-?>
-	<div class='footer'>Email: newsletter@gmail.com</div>
-
+	?>
+</div>
+<div class='footer'>Email: newsletter@gmail.com</div>
 </body>
 </html>
