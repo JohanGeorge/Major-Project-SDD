@@ -1,3 +1,18 @@
+div.icon{
+	position:absolute;
+	top:5px;
+	left:30px;
+}
+div.post{
+	position:relative;
+	top:0px;	
+	left:300px;
+	padding:20px;
+	background-color:white;
+	border:5px solid lightgrey;
+	width:50%;
+	margin-right:200px;
+}
 *{
 	margin:0px;
 	padding:0px;
@@ -40,7 +55,7 @@ input:hover{
 }
 input {
 	padding: 5px 6px;
-	margin: -5px;
+	margin: 20px;
 	border-radius: 10px;
 	border:2px solid lightgrey;
 	outline:none;/*when text is clicked on no border appears*/
@@ -49,10 +64,20 @@ html{
 	background-color:lightgrey;
 }
 body{
-	color:blue;
+	color:black;
 }
-div.icon{
-	position:relative;
-	top:-15px;
-	left:-330px;
+div.footer{
+	color:red;
+	background-color:lightgrey;
+	border-top:2px solid black;
+	width:100%;
+	margin-top:10px;
+	padding:10px;
+	text-align:center;
+	position:fixed;
+	bottom:0px;
+	
+}
+img{
+	
 }
