@@ -20,14 +20,16 @@
 ?>
 <div class="stream">
 	<?php 
-	$sql = "SELECT filedestination,description FROM filedestinations ORDER BY id DESC";
+	$sql = "SELECT filedestination,description,date FROM filedestinations ORDER BY id DESC";
 	$query = mysqli_query($conn, $sql);
 	if(mysqli_query($conn, $sql)){
 		//output data from every row
 		while($row = mysqli_fetch_assoc($query)){
-			$image = "<img src='" . $row['filedestination'] . "' style='width:100px;height:100px;' alt='error'>" ;
+			$image = "<div class='postimg'><img src='" . $row['filedestination'] . "' style='width:500px;height:300px;' alt='error'></div>" ;
 			$desc = "<div class='desc'>" . $row['description'] . "</div>";
-			echo "<div class='post'>" . $image . $desc . "</div>";
+			$dt = new DateTime($row['date']);
+			$date = $dt ->format('d-m-y');
+			echo "<div class='post'>" . $image . $desc . $date . "</div>";
 		}
 	}else{
 		echo "Error displaying image";
