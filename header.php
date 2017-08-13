@@ -25,7 +25,6 @@
 						}
 					?></li>
 					<li><a href="signup.php">SIGNUP</a></li>
-					<li><a href="https://yoshirulz.github.io/SDD-Project">A BETTER WEBSITE</a></li>
 				</ul>
 			</nav>
 		</header>
