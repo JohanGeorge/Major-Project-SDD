@@ -17,44 +17,43 @@ div.stream{
 div.post{
 	position:relative;
 	top:0px;	
-	left:300px;
 	padding:20px;
 	background-color:white;
 	border:5px solid lightgrey;
 	width:50%;
 	min-height:100px;
 	height:auto;
-	margin-right:200px;
+	margin:auto;
 }
-div.postimg{
-	position:relative;
-	left:100px;
-	margin-right:170px;
-	margin-bottom:5px;
-	/* border:2px solid green; */
+img.displayed{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	margin-bottom:20px;
 }
 div.desc{
 	position:relative;
 	top:0px;
-	left:100px;
-	width:500px;
+	left:50px;
+	width:600px;
 	min-height:50px;
-	margin-bottom:0px;
+	margin-bottom:10px;
 	word-wrap:break-word;
+	text-align:center;
 	/*border:2px solid green;*/
 }
 *{
 	margin:0px;
 	padding:0px;
 	text-decoration:none;
+	font-family:Arial;
+	font-size:15px;
 }
-
 nav ul{
 	float: right;
 	margin-top:20px;
 	margin-right:60px;
 }
-
 nav ul li{
 	list-style:none;
 	float: left;
@@ -74,7 +73,14 @@ nav ul li a{
 	font-size:16px;
 	padding:10px;
 }
-
+div.title{
+	position:fixed;
+	left:130px;
+	top:10px;
+	color:white;
+	font-size:30px;
+	font-family:Rockwell;
+}
 input:hover{
 	border: 5px solid lightgreen;
 }
@@ -92,6 +98,71 @@ div.upload{
 	margin-bottom:20px;
 	width:50%;
 }
+#signup{
+	position:relative;
+	top:50px;
+	left:0px;
+	text-align:center;
+	margin:30px;
+}
+div.signupmsg{
+	position:relative;
+	top:0px;
+	left:0px;
+	margin:50px;
+	font-family: 'EB Garamond';
+	font-size: 30px;
+}
+#signup2{
+	position:relative;
+	top:50px;
+	left:0px;
+	text-align:center;
+}
+#signup form input{
+	margin-right:10px;
+	height:30px;
+} 
+#signup form button{
+	background-color:#4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor:pointer;
+}
+div.signupbtt{
+	position:relative;
+	top:100px;
+	left:200px;
+}
+#signuperr{
+	position:relative;
+	top:100px;
+	left:0px;
+	text-align:center;
+	font-family: 'EB Garamond';
+	font-size: 30px;
+}
+#signuperr form button{
+	position:relative;
+	top:100px;
+	right:0px;
+	background-color:#4CAF50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align:center;
+	text-decoration:none;
+	display:inline-block;
+	font-size: 20px;
+	margin: 4px 2px;
+	cursor:pointer;
+}
 html{
 	background-color:lightgrey;
 }
@@ -100,7 +171,7 @@ body{
 	margin-bottom:100px;
 }
 div.footer{
-	color:red;
+	color:#1EA435;
 	background-color:lightgrey;
 	border-top:2px solid black;
 	width:100%;
