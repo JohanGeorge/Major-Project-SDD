@@ -25,7 +25,7 @@
 	if(mysqli_query($conn, $sql)){
 		//output data from every row
 		while($row = mysqli_fetch_assoc($query)){
-			$image = "<div class='postimg'><img src='" . $row['filedestination'] . "' style='width:500px;height:300px;' alt='error'></div>" ;
+			$image = "<img class='displayed' src='" . $row['filedestination'] . "' style='max-height:180px;max-width:240px;' alt='error' />" ;
 			$desc = "<div class='desc'>" . $row['description'] . "</div>";
 			$dt = new DateTime($row['date']);
 			$date = $dt ->format('d-m-y');
