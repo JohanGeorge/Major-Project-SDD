@@ -11,9 +11,10 @@
 		//echo $_SESSION['id'];
 		echo '<div class="upload">	
 				<form action="upload.php" method="POST" enctype="multipart/form-data"> 
-				<input type="file" name="file" >
-				Description:
-				<input type="text" name="description" >
+				<h2>Select An Image To Upload:</h2></br>
+				<input type="file" name="file" ></br></br>
+				<h1 font-family:"georgia";>Description:</h1></br>
+				<textarea cols="82"; rows="5"; type="text" name="description" style= "max-height:200px;height:auto"></textarea>
 				<button type="submit" name="submit">UPLOAD</button>
 				</form></div>';
 	}
@@ -35,7 +36,6 @@
 		echo "Error displaying image";
 		}
 	?>
-</div>
-<div class='footer'>Email: newsletter@gmail.com</div>
+</div>	
 </body>
 </html>
