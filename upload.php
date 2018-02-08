@@ -1,14 +1,14 @@
 <?php
 	session_start();
-	
 	$conn = mysqli_connect("localhost", "root", "", "images");
-
 if (!$conn) {
 	die("connection failed: ".mysqli_connect_error());
 }	
+	$fs = 5000000; //filesize limit for image (in bytes)
 	
 	if(isset($_POST['submit'])){
 		$file=$_FILES['file'];
+		$desc=$_POST['description'];
 		
 		$filename = $file['name'];
 		$filetmpname = $file['tmp_name'];
@@ -22,13 +22,13 @@ if (!$conn) {
 		$allowed = array('jpg', 'jpeg', 'png', 'pdf'); //allowed filetypes
 		if(in_array($fileactualext, $allowed)){			//checks if the images filetype is allowed
 			if($fileerror===0){							//checks if there is no error
-				if($filesize<500000){					//checks if the file size is less than 500kB
+				if($filesize<$fs){					//checks if the file size is less than 500kB
 					$filenamenew = uniqid('',true).".".$fileactualext;		//changes filename to 'unique id.extension'
 					$filedestination = 'uploads/'.$filenamenew;				//sets file destination to 'uploads' folder with the file named with filenamenew
 					move_uploaded_file($filetmpname, $filedestination);		//checks the filenames match and moves it to the new destination
 					
-					$sql = "INSERT INTO filedestinations(filedestination) 
-					VALUES('$filedestination')";
+					$sql = "INSERT INTO filedestinations(filedestination,description) 
+					VALUES('$filedestination','$desc')";
 					
 					/* check connection */
 					if (mysqli_connect_errno()) {
@@ -50,10 +50,11 @@ if (!$conn) {
 				echo "There was an error uploading the file";
 			}
 		}else{
-			echo "You cannot upload files of this type";
+			echo "You cannot upload files of this type	<a href='index.php'>HOME</a></br></br>";
 		}
 	} //need to upload file destination to database
 	if(isset($filedestination)){
 		$_SESSION['filedestination']=$filedestination;
-	}else{echo "No image selected";}
+	}else{echo "No image selected	<a href='index.php'>HOME</a>";}
 ?>
+
