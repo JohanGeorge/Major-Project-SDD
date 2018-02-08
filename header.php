@@ -3,13 +3,14 @@
 <html>
 	<head>
 		<title>School Newsletter</title>
-		<link rel="stylesheet" type="text/css" href = "style.css">
+		<link rel="stylesheet" type="text/css" href = "style.css?v=1.1">
 	</head>
 	<body>
 		<header>
 			<nav>
 				<ul>
 					<li><div class="icon"><img src="newicon.png" style="width: 50px; height: 50px;"></div></li>
+					<li><div class="title">Normanhurst Boys High School</div></li>
 					<li><a href="index.php">HOME</a></li>
 					<li><?php
 						if (isset($_SESSION['id'])) {
@@ -18,8 +19,8 @@
 								"</form>";
 						} else {
 							echo "<form action='include/login.inc.php' method='post'>\n" .
-									"<input name='uid' type='text' size='40' placeholder='Username'>\n" .
-									"<input name='pwd' type='password' size='40' placeholder='Password'>\n" .
+									"<input name='uid' type='text' size='20' placeholder='Username'>\n" .
+									"<input name='pwd' type='password' size='20' placeholder='Password'>\n" .
 									"<button type='submit'>LOG IN &rarr;</button>\n" .
 								"</form>";
 						}
